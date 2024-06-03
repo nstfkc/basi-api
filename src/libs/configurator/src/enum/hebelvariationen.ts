@@ -1,0 +1,16 @@
+export enum K6_TUREN_VARIANTS {
+    'k6-standart' = 'Standard: Materialstärke 3 mm, Breite 20 mm, Länge 49,5 mm, 14,5 mm gekröpft',
+    'k6-variante1' = 'Variante 1: Materialstärke 3 mm, Breite 20 mm, Länge 44,5 mm, 10,5 mm gekröpft',
+    'k6-variante2' = 'Variante 2: Materialstärke 3 mm, Breite 20 mm, Länge 48 mm, 11 mm gekröpft',
+    'k6-variante3' = 'Variante 3: Materialstärke 3 mm, Breite 20 mm, Länge 52 mm, 10,5 mm gekröpft',
+    'k6-variante4' = 'Variante 4: Materialstärke 3 mm, Breite 20 mm, Länge 54 mm, 13 mm gekröpft',
+    'k6-variante5' = 'Variante 5: Materialstärke 3 mm, Breite 20 mm, Länge 65 mm, flach',
+    't250-standart' = 'Standard: Materialstärke 2 mm, Breite 16 mm, Länge 32,5 mm, 16,5mm gekröpft',
+    't250-variante1' = 'Variante 1: Materialstärke 2,5 mm, Breite 13 mm, Länge 43 mm, flach',
+    'k10-standart' = 'Standard: Materialstärke 3 mm, Breite 20 mm, Länge 49,5 mm, 14,5 mm gekröpft',
+    'k10-variante1' = 'Variante 1: Materialstärke 3 mm, Breite 20 mm, Länge 44,5 mm, 10,5 mm gekröpft',
+    'k10-variante2' = 'Variante 2: Materialstärke 3 mm, Breite 20 mm, Länge 48 mm, 11 mm gekröpft',
+    'k10-variante3' = 'Variante 3: Materialstärke 3 mm, Breite 20 mm, Länge 52 mm, 10,5 mm gekröpft',
+    'k10-variante4' = 'Variante 4: Materialstärke 3 mm, Breite 20 mm, Länge 54 mm, 13 mm gekröpft',
+    'k10-variante5' = 'Variante 5: Materialstärke 3 mm, Breite 20 mm, Länge 65 mm, flach',
+}

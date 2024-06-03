@@ -1,0 +1,9 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "src",
+  "compilerOptions": {
+    "assets": ["libs/shared-kernel/email/tpl/**/*", "libs/shared-kernel/pdf/assets/**/*"],
+    "watchAssets": true,
+    "resolveJsonModule": true
+  }
+}

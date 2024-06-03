@@ -1,0 +1,49 @@
+stages:
+  - deploy
+
+include:
+  - project: 'devops/deploy'
+    ref: master
+    file: 'code/docker.yaml'
+
+deploy.dev:
+  stage: deploy
+  variables:
+    ENV_FILE: '${DEV_ENV}'
+    PROJECT_NAME: basi-locks-api
+    EXT_PORT: 3003
+    INT_PORT: 3000
+  only:
+    - develop
+  extends: .docker_build_and_run
+
+prod.deploy:
+  environment:
+    name: production
+    url: https://api.basidev.de/
+  image: alpine:3.18.4
+  stage: deploy
+  variables:
+    GIT_SUBMODULE_STRATEGY: none
+    PROJECT_PATH: /home/basi/project/api/
+    SERVICE: basi-api
+  before_script:
+    - apk update && apk add openssh-client rsync git
+    - eval $(ssh-agent -s)
+    - echo "$PROD_SSH_PRIVATE_KEY" | ssh-add -
+    - mkdir -p ~/.ssh
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+  script:
+    - echo "${PROD_ENV}" > .env
+    - ssh ${PROD_USER?}@${PROD_HOST?} "sudo service ${SERVICE} stop"
+    - rsync -ar --delete-after --exclude /node_modules ./ ${PROD_USER?}@${PROD_HOST?}:${PROJECT_PATH?}/    
+    - ssh ${PROD_USER?}@${PROD_HOST?} "cd ${PROJECT_PATH?} && npm ci"
+    - ssh ${PROD_USER?}@${PROD_HOST?} "cd ${PROJECT_PATH?} && npm run build"
+    - ssh ${PROD_USER?}@${PROD_HOST?} "sudo service ${SERVICE} start"    
+  after_script:
+    - ssh-agent -k
+  tags:
+    - docker
+  only:
+    variables:
+      - $CI_COMMIT_TAG =~ /^v\d+\.\d+\.\d+$/

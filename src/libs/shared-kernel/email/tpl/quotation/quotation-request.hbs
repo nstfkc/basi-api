@@ -1,0 +1,34 @@
+<p>Hallo!</p>
+<p>Kunde {{ name }} hat eine Bestellung für das Produkt {{ product }} hinterlassen.</p>
+<p>Die Details der Bestellung können Sie der angehängten PDF-Datei entnehmen.</p>
+
+<p>
+Kontakt: <br>
+Produkttyp: {{ productType }} <br>
+Ansprechpartner: {{ name }} <br>
+{{#if company}}
+Firma: {{ company }} <br>
+{{/if}}
+Email: {{ email }} <br>
+{{#if street}}
+Telefon: {{ phone }} <br>
+{{/if}}
+{{#if street}}
+Straße, Hausnummer: {{ street }} <br>
+{{/if}}
+{{#if city}}
+Stadt: {{ city }} <br>
+{{/if}}
+{{#if company}}
+Firma: {{ company }} <br>
+{{/if}}
+{{#if zip}}
+Postleitzahl: {{ zip }} <br>
+{{/if}}
+{{#if comment}}
+Comment: {{ comment }} <br>
+{{/if}}
+{{#if customerNumber}}
+Kundennummer: {{ customerNumber }} <br>
+{{/if}}
+</p>

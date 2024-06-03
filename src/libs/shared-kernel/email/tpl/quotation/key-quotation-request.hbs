@@ -1,0 +1,82 @@
+<p>Hallo!</p>
+<p>Kunde {{ name }} hat eine Anfrage für Prägerohlinge aufgegeben.</p>
+<p>Detaillierte Informationen zur Anfrage finden Sie in der beigefügten PDF-Datei.</p>
+
+<p>
+Kontakt: <br>
+Ansprechpartner: {{ name }} <br>
+{{#if company}}
+Firma: {{ company }} <br>
+{{/if}}
+Email: {{ email }} <br>
+{{#if street}}
+Telefon: {{ phone }} <br>
+{{/if}}
+{{#if street}}
+Straße, Hausnummer: {{ street }} <br>
+{{/if}}
+{{#if city}}
+Stadt: {{ city }} <br>
+{{/if}}
+{{#if company}}
+Firma: {{ company }} <br>
+{{/if}}
+{{#if zip}}
+Postleitzahl: {{ zip }} <br>
+{{/if}}
+{{#if comment}}
+Comment: {{ comment }} <br>
+{{/if}}
+{{#if customerNumber}}
+Kundennummer: {{ customerNumber }} <br>
+{{/if}}
+    {{#each keys}}
+        <br>
+        {{#if this.name}}
+            <b>Prägerohling: </b> {{this.name}} <br>
+        {{/if}}
+
+        {{#if this.menge}}
+            <b>Menge:</b> {{this.menge}} <br>
+        {{/if}}
+
+        <b>Vorderseite: </b>  <br>
+        <b>Typ:</b> {{this.front.type}} <br>
+        <b>Schriftart:</b> {{this.front.font}} <br>
+        {{#ifCond this.front.type '==' 'text'}}
+            {{#each this.front.textObj}}
+                {{#if this.value}}
+                    <b>{{this.name}}</b> <br>
+                    <b>Text:</b> {{this.value}} <br>
+                    <b>Schriftgröße:</b> {{this.size}}  <br>
+                {{/if}}
+            {{/each}}
+        {{else}}
+        {{/ifCond}}
+        {{#ifCond this.front.type '==' 'logo'}}
+            <b>Logo-Dateiname:</b> {{this.front.logoName}} <br>
+            <b>Name der Bilddatei:</b> {{this.front.imageName}} <br>
+            <b>Logogröße:</b> {{this.front.logoSize}} <br>
+            {{else}}
+        {{/ifCond}}
+        <b>Rückseite: </b>  <br>
+        <b>Typ:</b> {{this.back.type}} <br>
+        <b>Schriftart:</b> {{this.back.font}} <br>
+        {{#ifCond this.back.type '==' 'text'}}
+            {{#each this.back.textObj}}
+                {{#if this.value}}
+                    <b>{{this.name}}</b> <br>
+                    <b>Text:</b> {{this.value}} <br>
+                    <b>Schriftgröße:</b> {{this.size}}  <br>
+                {{/if}}
+            {{/each}}
+        {{else}}
+        {{/ifCond}}
+        {{#ifCond this.back.type '==' 'logo'}}
+            <b>Logo-Dateiname:</b> {{this.back.logoName}} <br>
+            <b>Name der Bilddatei:</b> {{this.back.imageName}} <br>
+            <b>Logogröße:</b> {{this.back.logoSize}} <br>
+            {{else}}
+        {{/ifCond}}
+    {{/each}}
+</p>

@@ -1,0 +1,204 @@
+{
+    "BASI GmbH \nKonstantinstraße 387\n41238 Mönchengladbach \nGermany": {
+      "EN": "BASI GmbH \nKonstantinstraße 387\n41238 Mönchengladbach \nGermany",
+      "DE": "BASI GmbH \nKonstantinstraße 387\n41238 Mönchengladbach \nGermany"
+    },
+    "Anfrage": {
+      "EN": "Inquiry",
+      "DE": "Anfrage"
+    },
+    "Ansprechpartner": {
+      "EN": "Contact person",
+      "DE": "Ansprechpartner"
+    },
+    "Adresse": {
+      "EN": "Address",
+      "DE": "Adresse"
+    },
+    "Kundennummer": {
+      "EN": "Customer number",
+      "DE": "Kundennummer"
+    },
+    "E-mail": {
+      "EN": "E-mail",
+      "DE": "E-mail"
+    },
+    "Telefonnummer": {
+      "EN": "Contact number",
+      "DE": "Telefonnummer"
+    },
+    "Datum": {
+      "EN": "Date",
+      "DE": "Datum"
+    },
+    "Produkt": {
+      "EN": "Product",
+      "DE": "Produkt"
+    },
+    "Türen": {
+      "EN": "Doors",
+      "DE": "Türen"
+    },
+    "Zylindertyp": {
+      "EN": "Cylinder type",
+      "DE": "Zylindertyp"
+    },
+    "Hebelzylinder": {
+      "EN": "Lever cylinder",
+      "DE": "Hebelzylinder"
+    },
+    "Außenzylinder": {
+      "EN": "Outer cylinder",
+      "DE": "Außenzylinder"
+    },
+    "Vorhangschloss (VHS)": {
+      "EN": "Padlock (VHS)",
+      "DE": "Vorhangschloss (VHS)"
+    },
+    "Padlock (VHS)": {
+      "EN": "Padlock (VHS)",
+      "DE": "Padlock (VHS)"
+    },
+    "Länge außen": {
+      "EN": "Length outside",
+      "DE": "Länge außen"
+    },
+    "Länge innen": {
+      "EN": "Length inside",
+      "DE": "Länge innen"
+    },
+    "Bügelhöhe": {
+      "EN": "Shackle height",
+      "DE": "Bügelhöhe"
+    },
+    "Gruppen": {
+      "EN": "Groups",
+      "DE": "Gruppen"
+    },
+    "Anzahl Schlüssel": {
+      "EN": "Number of keys",
+      "DE": "Anzahl Schlüssel"
+    },
+    "Menge": {
+      "EN": "Quantity",
+      "DE": "Menge"
+    },
+    "Vorderseite": {
+      "EN": "Front",
+      "DE": "Vorderseite"
+    },
+    "Rückseite": {
+      "EN": "Back",
+      "DE": "Rückseite"
+    },
+    "month": {
+        "DE": [
+            "Januar",
+            "Februar",
+            "März",
+            "April",
+            "Mai",
+            "Juni",
+            "Juli",
+            "August",
+            "September",
+            "Oktober",
+            "November",
+            "Dezember"
+        ],
+        "EN": [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December"
+        ]
+    },
+    "k6-standart": {
+        "DE": "Standard: Materialstärke 3 mm, Breite 20 mm, Länge 49,5 mm, 14,5 mm gekröpft",
+        "EN": "Standard: Material thickness 3 mm, width 20 mm, length 49.5 mm, 14.5 mm cranked"
+    },
+    "k6-variante1": {
+        "DE": "Variante 1: Materialstärke 3 mm, Breite 20 mm, Länge 44,5 mm, 10,5 mm gekröpft",
+        "EN": "Variante 1: Material thickness 3 mm, width 20 mm, length 44.5 mm, 10.5 mm cranked"
+    },
+    "k6-variante2": {
+        "DE": "Variante 2: Materialstärke 3 mm, Breite 20 mm, Länge 48 mm, 11 mm gekröpft",
+        "EN": "Variante 2: Material thickness 3 mm, width 20 mm, length 48 mm, 11 mm cranked"
+    },
+    "k6-variante3": {
+        "DE": "Variante 3: Materialstärke 3 mm, Breite 20 mm, Länge 52 mm, 10,5 mm gekröpft",
+        "EN": "Variante 3: Material thickness 3 mm, width 20 mm, length 52 mm, 10.5 mm cranked"
+    },
+    "k6-variante4": {
+        "DE": "Variante 4: Materialstärke 3 mm, Breite 20 mm, Länge 54 mm, 13 mm gekröpft",
+        "EN": "Variante 4: Material thickness 3 mm, width 20 mm, length 54 mm, 13 mm cranked"
+    },
+    "k6-variante5": {
+        "DE": "Variante 5: Materialstärke 3 mm, Breite 20 mm, Länge 65 mm, flach",
+        "EN": "Variante 5: Material thickness 3 mm, width 20 mm, length 65 mm, flat"
+    },
+    "t250-standart": {
+        "DE": "Standard: Materialstärke 2 mm, Breite 16 mm, Länge 32,5 mm, 16,5mm gekröpft",
+        "EN": "Standard: Material thickness 2 mm, width 16 mm, length 32.5 mm, 16.5 mm cranked"
+    },
+    "t250-variante1": {
+        "DE": "Variante 1: Materialstärke 2,5 mm, Breite 13 mm, Länge 43 mm, flach",
+        "EN": "Variante 1: Material thickness 2.5 mm, width 13 mm, length 43 mm, flat"
+    },
+    "k10-standart": {
+        "DE": "Standard: Materialstärke 3 mm, Breite 20 mm, Länge 49,5 mm, 14,5 mm gekröpft",
+        "EN": "Standard: Material thickness 3 mm, width 20 mm, length 49.5 mm, 14.5 mm cranked"
+    },
+    "k10-variante1": {
+        "DE": "Variante 1: Materialstärke 3 mm, Breite 20 mm, Länge 44,5 mm, 10,5 mm gekröpft",
+        "EN": "Variante 1: Material thickness 3 mm, width 20 mm, length 44.5 mm, 10.5 mm cranked"
+    },
+    "k10-variante2": {
+        "DE": "Variante 2: Materialstärke 3 mm, Breite 20 mm, Länge 48 mm, 11 mm gekröpft",
+        "EN": "Variante 2: Material thickness 3 mm, width 20 mm, length 48 mm, 11 mm cranked"
+    },
+    "k10-variante3": {
+        "DE": "Variante 3: Materialstärke 3 mm, Breite 20 mm, Länge 52 mm, 10,5 mm gekröpft",
+        "EN": "Variante 3: Material thickness 3 mm, width 20 mm, length 52 mm, 10.5 mm cranked"
+    },
+    "k10-variante4": {
+        "DE": "Variante 4: Materialstärke 3 mm, Breite 20 mm, Länge 54 mm, 13 mm gekröpft",
+        "EN": "Variante 4: Material thickness 3 mm, width 20 mm, length 54 mm, 13 mm cranked"
+    },
+    "k10-variante5": {
+        "DE": "Variante 5: Materialstärke 3 mm, Breite 20 mm, Länge 65 mm, flach",
+        "EN": "Variante 5: Material thickness 3 mm, width 20 mm, length 65 mm, flat"
+    },
+    "fa-head": {
+        "EN": "FA-Head",
+        "DE": "FA-Kopf"
+    },
+    "ov-head": {
+      "EN": "OV-Head",
+      "DE": "OV-Kopf"
+    },
+    "original-head": {
+      "EN": "Original-Head",
+      "DE": "Original-Köpfe"
+    },
+    "sonderprofil": {
+      "EN": "Special profile",
+      "DE": "Sonderprofil"
+    },
+    "werksprofil": {
+      "EN": "Work profile",
+      "DE": "Werksprofil"
+    },
+    "Produkttyp": {
+      "EN": "Product type",
+      "DE": "Produkttyp"
+    }
+  }
