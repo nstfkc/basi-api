@@ -1,20 +1,29 @@
 import { Configurator } from '../../../configurator/src/entities/configurator';
 import { writeToBuffer } from 'fast-csv';
-import {ProductId} from "../../../configurator/src/enum/product-id";
-import {ProductType} from "../../../configurator/src/enum/product-type";
+import { ProductId } from '../../../configurator/src/enum/product-id';
+import { ProductType } from '../../../configurator/src/enum/product-type';
 
 export class ConfiguratorCsvService {
     static async buildCsv(configurator: Configurator) {
         const writeToBufferArray = [
-            ['Produkttyp','Projektname','Türbezeichnung', 'Zylindertyp', 'Länge innen', 'Länge außen', 'Benutzername', 'Anzahl Schlüssel'],
+            [
+                'Produkttyp',
+                'Projektname',
+                'Türbezeichnung',
+                'Zylindertyp',
+                'Länge innen',
+                'Länge außen',
+                'Benutzername',
+                'Anzahl Schlüssel',
+            ],
         ];
 
         const doors = configurator.doors;
 
         const productList = [];
-        configurator.groups.map(group => {
-            group.doorIds.map(doorId => {
-                const door = doors.filter(door => doorId === door.id);
+        configurator.groups.map((group) => {
+            group.doorIds.map((doorId) => {
+                const door = doors.filter((door) => doorId === door.id);
                 let productName;
                 if (configurator.productType === ProductType.WERKSPROFIL) {
                     switch (configurator.productId) {
@@ -50,16 +59,14 @@ export class ConfiguratorCsvService {
                     door[0].langeAusen,
                     group.name,
                     group.keysCount,
-                ])
-            })
+                ]);
+            });
         });
 
-        productList.sort((a, b) => a[0] < b[0] ? -1 : 1);
+        productList.sort((a, b) => (a[0] < b[0] ? -1 : 1));
 
-        return writeToBuffer(
-            writeToBufferArray.concat(
-                productList,
-            ),
-        );
+        return writeToBuffer(writeToBufferArray.concat(productList), {
+            delimiter: ';',
+        });
     }
 }
