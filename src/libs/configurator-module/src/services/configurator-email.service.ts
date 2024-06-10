@@ -7,10 +7,11 @@ import { EmailService } from '../../../shared-kernel/email/email.service';
 import { EmailTemplate } from '../../../shared-kernel/email/enums/email-template.enum';
 import { KeyRequest } from '../requests/key.request';
 import { ConfiguratorPDFService } from './configurator-pdf.service';
-import {IKeyTextType, Key, KeySize} from 'src/libs/configurator/src/entities/key';
+import { IKeyTextType, Key, KeySize } from 'src/libs/configurator/src/entities/key';
 import { IKeySideLogoSize, IKeyType } from 'src/libs/configurator/src/enum/key';
 import { Email } from 'src/libs/shared-kernel/email/email';
 import { ConfiguratorRequest } from '../requests/configurator.request';
+import { writeFileSync } from 'fs';
 
 export class Attachment {
     public readonly type = 'buffer';
@@ -37,7 +38,7 @@ export enum FontName {
 type KeyBlockSide = {
     logoBuffer: Buffer | null;
     image: Buffer | null;
-    text: string,
+    text: string;
     textObj: TextObj[];
     font: FontName;
     logoSize: IKeySideLogoSize;
@@ -47,9 +48,11 @@ type KeyBlockSide = {
     imageName: string;
 };
 
-type TextObj = IKeyTextType | {
-    size: string,
-}
+type TextObj =
+    | IKeyTextType
+    | {
+          size: string;
+      };
 
 export class KeyBlock {
     readonly front: KeyBlockSide;
@@ -71,9 +74,9 @@ export class KeyBlock {
                 name: item.name,
                 value: item.value,
                 maxLength: item.maxLength,
-                size: key.front.size[item.name]
-            }
-        })
+                size: key.front.size[item.name],
+            };
+        });
 
         const textBack = key.back.text.reduce((acc, item) => {
             return `${item.value} `;
@@ -83,9 +86,9 @@ export class KeyBlock {
                 name: item.name,
                 value: item.value,
                 maxLength: item.maxLength,
-                size: key.back.size[item.name]
-            }
-        })
+                size: key.back.size[item.name],
+            };
+        });
         this.front = {
             logoBuffer: key?.front?.logo ? Buffer.from(key.front.logo.slice(22), 'base64') : null,
             image: key?.front?.image ? Buffer.from(key.front.image.slice(22), 'base64') : null,
@@ -132,6 +135,11 @@ export class ConfiguratorEmailService {
             new Attachment('Ihre Anfrage.csv', csvFile, 'text/csv'),
             new Attachment('Ihre Anfrage.pdf', pdfBufferForCompany, 'application/pdf'),
         ];
+        try {
+            writeFileSync(`${new Date().getTime()}.csv`, csvFile);
+        } catch (err) {
+            console.log(err);
+        }
         const attachmentsForClient = [new Attachment('Ihre Anfrage.pdf', pdfBuffer, 'application/pdf')];
         const toEmails = this.config.email.defaultToEmail.split(',').map((email) => new Email(email));
         const options = new SendEmailOptionsBuilder({
