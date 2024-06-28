@@ -123,7 +123,8 @@ export class ConfiguratorEmailService {
         const productNames = ['K6-RT', 'T250', 'K-10'];
         configurator.name = configurator.name ? this.capitalizeFirstLetter(configurator.name) : '';
         const subject = configurator.language === 'EN' ? 'Your request at BASI' : 'Ihre Anfrage bei BASI';
-        const csvFile = await ConfiguratorCsvService.buildCsv(configurator);
+        const csvFile = await ConfiguratorCsvService.buildCsv(configurator, ';');
+        const csvFileWithComma = await ConfiguratorCsvService.buildCsv(configurator, ',');
         const pdfFile = await ConfiguratorPDFService.buildPDFByConfigurator(configurator);
         const pdfFileForCompany = await ConfiguratorPDFService.buildPDFByConfigurator({
             ...configurator,
@@ -133,6 +134,8 @@ export class ConfiguratorEmailService {
         const pdfBufferForCompany = await pdfFileForCompany.toBuffer();
         const attachmentsForCompany = [
             new Attachment('Ihre Anfrage.csv', csvFile, 'text/csv'),
+            new Attachment('Ihre Anfrage_.csv', csvFileWithComma, 'text/csv'),
+
             new Attachment('Ihre Anfrage.pdf', pdfBufferForCompany, 'application/pdf'),
         ];
         try {

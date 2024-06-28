@@ -4,7 +4,7 @@ import { ProductId } from '../../../configurator/src/enum/product-id';
 import { ProductType } from '../../../configurator/src/enum/product-type';
 
 export class ConfiguratorCsvService {
-    static async buildCsv(configurator: Configurator) {
+    static async buildCsv(configurator: Configurator, delimiter = ';') {
         const writeToBufferArray = [
             [
                 'Produkttyp',
@@ -66,7 +66,7 @@ export class ConfiguratorCsvService {
         productList.sort((a, b) => (a[0] < b[0] ? -1 : 1));
 
         return writeToBuffer(writeToBufferArray.concat(productList), {
-            delimiter: ';',
+            delimiter,
         });
     }
 }
