@@ -135,11 +135,7 @@ export class ConfiguratorEmailService {
             new Attachment('Ihre Anfrage.csv', csvFile, 'text/csv'),
             new Attachment('Ihre Anfrage.pdf', pdfBufferForCompany, 'application/pdf'),
         ];
-        try {
-            writeFileSync(`${new Date().getTime()}.csv`, csvFile);
-        } catch (err) {
-            console.log(err);
-        }
+
         const attachmentsForClient = [new Attachment('Ihre Anfrage.pdf', pdfBuffer, 'application/pdf')];
         const toEmails = this.config.email.defaultToEmail.split(',').map((email) => new Email(email));
         const options = new SendEmailOptionsBuilder({
