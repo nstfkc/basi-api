@@ -172,7 +172,7 @@ export class DynamicPage extends PdfPage {
             .font(AssetManager.HelveticaNeue())
             .fontSize(8)
             .fillColor('#06326E')
-            .text(phone, doc.page.width - horizontalMargins - 8 - 75, start + 4);
+            .text(phone, doc.page.width - horizontalMargins - 8 - 75, start + 1);
 
         start += 48; // logo height
         start += 24; // margin-top

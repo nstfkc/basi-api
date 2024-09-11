@@ -4,7 +4,7 @@ import * as path from 'path';
 export type AssetPath = string;
 export type FsPath = string;
 
-export class AssetManager{
+export class AssetManager {
     static getFsPath(assetPath: AssetPath): FsPath {
         const pathParts = [__dirname, 'assets'];
         assetPath.split('/').forEach((part) => pathParts.push(part));
@@ -20,7 +20,7 @@ export class AssetManager{
         return AssetManager.getFsPath(`fonts/${fontFile}`);
     }
     static HelveticaNeue(): FsPath {
-        return AssetManager.fontPath('HelveticaNeueLTPro-Bd_0.otf');
+        return AssetManager.fontPath('open-sans.ttf');
     }
     static imagePath(fontFile: string): FsPath {
         return AssetManager.getFsPath(`images/${fontFile}`);
