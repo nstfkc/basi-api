@@ -1,16 +1,16 @@
-import {PdfPage} from './PdfPage';
-import {ProductBlock} from './PdfBlock';
-import {AssetManager} from './asset-manager';
+import { PdfPage } from './PdfPage';
+import { ProductBlock } from './PdfBlock';
+import { AssetManager } from './asset-manager';
 import * as SvgToPdf from 'svg-to-pdfkit';
-import {format} from 'date-fns';
-import {Door} from 'src/libs/configurator/src/entities/door';
-import {Group} from 'src/libs/configurator/src/entities/group';
-import {ConfiguratorRequest} from 'src/libs/configurator-module/src/requests/configurator.request';
-import {K6_TUREN_VARIANTS} from 'src/libs/configurator/src/enum/hebelvariationen';
+import { format } from 'date-fns';
+import { Door } from 'src/libs/configurator/src/entities/door';
+import { Group } from 'src/libs/configurator/src/entities/group';
+import { ConfiguratorRequest } from 'src/libs/configurator-module/src/requests/configurator.request';
+import { K6_TUREN_VARIANTS } from 'src/libs/configurator/src/enum/hebelvariationen';
 import * as translations from 'src/libs/shared-kernel/pdf/assets/translations.json';
-import {ProductType} from "../../configurator/src/enum/product-type";
+import { ProductType } from '../../configurator/src/enum/product-type';
 import PDFDocument = PDFKit.PDFDocument;
-import {ProductId} from "../../configurator/src/enum/product-id";
+import { ProductId } from '../../configurator/src/enum/product-id';
 
 export class DoorBlock {
     public height: number;
@@ -482,9 +482,9 @@ export class DynamicPage extends PdfPage {
         let productName;
         if (this.configurator.productType === ProductType.WERKSPROFIL) {
             switch (this.configurator.productId) {
-                case ProductId.k6rt:
-                    productImage = 'k6rt.jpg';
-                    productName = 'K6-RT';
+                case ProductId.x50:
+                    productImage = 'x50.jpg';
+                    productName = 'X-50';
                     break;
                 case ProductId.t250:
                     productImage = 't250.jpg';
@@ -497,9 +497,9 @@ export class DynamicPage extends PdfPage {
             }
         } else {
             switch (this.configurator.productId) {
-                case ProductId.k6rt:
-                    productName = 'K6-SP';
-                    productImage = 'k6sp.jpg';
+                case ProductId.x50:
+                    productName = 'X50sp';
+                    productImage = 'X50sp.jpg';
                     break;
                 case ProductId.t250:
                     productName = 'T250sp';
@@ -512,11 +512,7 @@ export class DynamicPage extends PdfPage {
             }
         }
         x += 80;
-        doc.save()
-            .font(AssetManager.HelveticaNeue())
-            .fontSize(12)
-            .fillColor('#06326E')
-            .text(productName, x, start);
+        doc.save().font(AssetManager.HelveticaNeue()).fontSize(12).fillColor('#06326E').text(productName, x, start);
 
         doc.save()
             .font(AssetManager.HelveticaNeue())

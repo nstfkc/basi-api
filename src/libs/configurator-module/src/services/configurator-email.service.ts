@@ -120,7 +120,7 @@ export class KeyBlock {
 export class ConfiguratorEmailService {
     constructor(private readonly mailerService: EmailService, private readonly config: AppConfigService) {}
     async emailSend(configurator: ConfiguratorRequest): Promise<void> {
-        const productNames = ['K6-RT', 'T250', 'K-10'];
+        const productNames = ['X-50', 'T250', 'K-10'];
         configurator.name = configurator.name ? this.capitalizeFirstLetter(configurator.name) : '';
         const subject = configurator.language === 'EN' ? 'Your request at BASI' : 'Ihre Anfrage bei BASI';
         const csvFile = await ConfiguratorCsvService.buildCsv(configurator, ';');

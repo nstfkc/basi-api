@@ -1,5 +1,5 @@
 export enum ProductId {
-    k6rt = 'K6-RT',
+    x50 = 'X-50',
     t250 = 'T250',
     k10 = 'K-10',
 }
