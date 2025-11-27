@@ -500,7 +500,7 @@ export class DynamicPage extends PdfPage {
             switch (this.configurator.productId) {
                 case ProductId.x50:
                     productName = 'X50sp';
-                    productImage = 'X50sp.jpg';
+                    productImage = 'x50sp.jpg';
                     break;
                 case ProductId.t250:
                     productName = 'T250sp';
@@ -521,6 +521,7 @@ export class DynamicPage extends PdfPage {
             .fillColor('#06326E')
             .text(translations[this.configurator.productType][this.lang], x, start + 20);
 
+        console.log('Product Image', productImage);
         doc.image(AssetManager.imagePath(productImage), doc.page.width - horizontalMargins - 8 - 110, start, {
             width: 90,
             height: 90,
