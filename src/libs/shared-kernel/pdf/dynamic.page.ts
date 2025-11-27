@@ -480,6 +480,7 @@ export class DynamicPage extends PdfPage {
 
         let productImage;
         let productName;
+        console.log('Product Id', this.configurator.productId);
         if (this.configurator.productType === ProductType.WERKSPROFIL) {
             switch (this.configurator.productId) {
                 case ProductId.x50:
