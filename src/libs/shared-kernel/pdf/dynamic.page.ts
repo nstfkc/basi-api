@@ -502,9 +502,9 @@ export class DynamicPage extends PdfPage {
                     productName = 'X50sp';
                     productImage = 'x50sp.jpg';
                     break;
-                case ProductId.t250:
-                    productName = 'T250sp';
-                    productImage = 't250sp.jpg';
+                case ProductId.s30:
+                    productName = 'S30sp';
+                    productImage = 's30sp.jpg';
                     break;
                 case ProductId.k10:
                     productName = 'SPK';
